@@ -143,4 +143,12 @@ public class Yatzy {
 
         return 0;
     }
+
+    public int smallStraight(int d1, int d2, int d3, int d4, int d5) {
+        Set<Integer> differentFaces = new HashSet<>(Arrays.asList(d1, d2, d3, d4, d5));
+        if (differentFaces.size() == 5 && !differentFaces.contains(6))
+            return differentFaces.stream().reduce(0, Integer::sum);
+
+        return 0;
+    }
 }
