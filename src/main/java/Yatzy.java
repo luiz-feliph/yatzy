@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Yatzy {
 
     private int d1, d2, d3, d4, d5;
@@ -55,5 +57,13 @@ public class Yatzy {
 
     public int chance(int d1, int d2, int d3, int d4, int d5) {
         return d1 + d2 + d3 + d4 + d5;
+    }
+
+    public int yatzy(int d1, int d2, int d3, int d4, int d5) {
+        int[] fiveDiceResults = {d1, d2, d3, d4, d5};
+        for (int i = 1; i < 5; i++) {
+            if (fiveDiceResults[i] != fiveDiceResults[i - 1]) return 0;
+        }
+        return 50;
     }
 }
