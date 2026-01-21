@@ -85,8 +85,8 @@ public class Yatzy {
             int count = 0;
             for (Integer result : fiveDiceResults) {
                 if (result == face) count++;
+                if (count == 2) return face * 2;
             }
-            if (count == 2) return face * 2;
         }
 
         return 0;
