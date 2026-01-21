@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class Yatzy {
 
@@ -70,9 +70,25 @@ public class Yatzy {
     public int sumDiceWithFace(int face, int d1, int d2, int d3, int d4, int d5) {
         int[] fiveDiceResults = {d1, d2, d3, d4, d5};
         int score = 0;
-        for (int i = 0; i < 5; i++) {
-            if (fiveDiceResults[i] == face) score += fiveDiceResults[i];
+        for (int result : fiveDiceResults) {
+            if (result == face) score += result;
         }
         return score;
+    }
+
+    public int pair(int d1, int d2, int d3, int d4, int d5) {
+        ArrayList<Integer> fiveDiceResults = new ArrayList<>(List.of(d1, d2, d3, d4, d5));
+        fiveDiceResults.sort(Collections.reverseOrder());
+        Set<Integer> DifferentFaces = new LinkedHashSet<>(fiveDiceResults);
+
+        for (Integer face : DifferentFaces) {
+            int count = 0;
+            for (Integer result : fiveDiceResults) {
+                if (result == face) count++;
+            }
+            if (count == 2) return face * 2;
+        }
+
+        return 0;
     }
 }
