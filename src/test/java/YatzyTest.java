@@ -179,4 +179,9 @@ public class YatzyTest {
     public void four_of_a_kind_returns_0_given_2_2_2_5_5() {
         assertEquals(0, yatzy.four_of_a_kind(2,2,2,5,5));
     }
+
+    @Test
+    public void four_of_a_kind_returns_8_given_2_2_2_2_2() {
+        assertEquals(8, yatzy.four_of_a_kind(2,2,2,2,2));
+    }
 }
