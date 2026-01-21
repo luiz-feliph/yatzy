@@ -128,4 +128,19 @@ public class Yatzy {
 
         return 0;
     }
+
+    public int four_of_a_kind(int d1, int d2, int d3, int d4, int d5) {
+        Integer[] fiveDiceResults = {d1, d2, d3, d4, d5};
+        Set<Integer> differentFaces = new HashSet<>(Arrays.asList(fiveDiceResults));
+
+        for (int face : differentFaces) {
+            int count = 0;
+            for (int result : fiveDiceResults) {
+                if (result == face) count++;
+                if (count == 4) return face * 4;
+            }
+        }
+
+        return 0;
+    }
 }
