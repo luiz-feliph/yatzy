@@ -79,9 +79,9 @@ public class Yatzy {
     public int pair(int d1, int d2, int d3, int d4, int d5) {
         ArrayList<Integer> fiveDiceResults = new ArrayList<>(List.of(d1, d2, d3, d4, d5));
         fiveDiceResults.sort(Collections.reverseOrder());
-        Set<Integer> DifferentFaces = new LinkedHashSet<>(fiveDiceResults);
+        Set<Integer> differentFaces = new LinkedHashSet<>(fiveDiceResults);
 
-        for (Integer face : DifferentFaces) {
+        for (Integer face : differentFaces) {
             int count = 0;
             for (Integer result : fiveDiceResults) {
                 if (result == face) count++;
@@ -90,5 +90,28 @@ public class Yatzy {
         }
 
         return 0;
+    }
+
+    public int twoPairs(int d1, int d2, int d3, int d4, int d5) {
+        Integer[] fiveDiceResults = {d1, d2, d3, d4, d5};
+        Set<Integer> differentFaces = new HashSet<>(Arrays.asList(fiveDiceResults));
+        int score = 0, countPairs = 0;
+
+        for (int face : differentFaces) {
+            int countFaces = 0;
+
+            for (int result : fiveDiceResults) {
+                if (result == face) countFaces++;
+                if (countFaces == 2) {
+                    score += face * 2;
+                    countPairs++;
+                    break;
+                }
+            }
+        }
+
+        if (countPairs != 2) return 0;
+
+        return score;
     }
 }

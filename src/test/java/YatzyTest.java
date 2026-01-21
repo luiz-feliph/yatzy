@@ -135,7 +135,7 @@ public class YatzyTest {
     // Two pairs category
     @Test
     public void two_pairs_returns_8_given_1_1_2_3_3() {
-        assertEquals(9, yatzy.twoPairs(1,1,2,3,3));
+        assertEquals(8, yatzy.twoPairs(1,1,2,3,3));
     }
 
     @Test
