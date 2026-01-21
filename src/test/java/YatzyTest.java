@@ -25,7 +25,7 @@ public class YatzyTest {
 
     @Test
     public void yatzy_returns_0_given_1_1_1_2_1() {
-        assertEquals(50, yatzy.yatzy(1, 1, 1, 1, 1));
+        assertEquals(0, yatzy.yatzy(1, 1, 1, 2, 1));
     }
 
     // Ones category
