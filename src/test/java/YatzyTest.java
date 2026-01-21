@@ -131,4 +131,15 @@ public class YatzyTest {
     public void pair_returns_6_given_3_3_3_3_1() {
         assertEquals(6, yatzy.pair(3,3,3,3,1));
     }
+
+    // Two pairs category
+    @Test
+    public void two_pairs_returns_8_given_1_1_2_3_3() {
+        assertEquals(9, yatzy.twoPairs(1,1,2,3,3));
+    }
+
+    @Test
+    public void two_pairs_returns_0_given_1_1_2_3_4() {
+        assertEquals(0, yatzy.twoPairs(1,1,2,3,4));
+    }
 }
