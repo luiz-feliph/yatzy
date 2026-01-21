@@ -142,4 +142,14 @@ public class YatzyTest {
     public void two_pairs_returns_0_given_1_1_2_3_4() {
         assertEquals(0, yatzy.twoPairs(1,1,2,3,4));
     }
+
+    @Test
+    public void two_pairs_returns_6_given_1_1_2_2_2() {
+        assertEquals(6, yatzy.twoPairs(1,1,2,2,2));
+    }
+
+    @Test
+    public void two_pairs_returns_0_given_3_3_3_3_1() {
+        assertEquals(0, yatzy.twoPairs(3,3,3,3,1));
+    }
 }
