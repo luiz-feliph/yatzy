@@ -121,4 +121,14 @@ public class YatzyTest {
     public void pair_returns_12_given_1_1_6_2_6() {
         assertEquals(12, yatzy.pair(1,1,6,2,6));
     }
+
+    @Test
+    public void pair_returns_6_given_3_3_3_4_1() {
+        assertEquals(6, yatzy.pair(3,3,3,4,1));
+    }
+
+    @Test
+    public void pair_returns_6_given_3_3_3_3_1() {
+        assertEquals(6, yatzy.pair(3,3,3,3,1));
+    }
 }
