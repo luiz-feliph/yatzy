@@ -200,4 +200,20 @@ public class YatzyTest {
     public void small_straight_returns_0_given_2_3_4_5_6() {
         assertEquals(0, yatzy.smallStraight(2, 3, 4, 5, 6));
     }
+
+    // Large straight category
+    @Test
+    public void large_straight_returns_20_given_2_3_4_5_6() {
+        assertEquals(20, yatzy.largeStraight(2, 3, 4, 5, 6));
+    }
+
+    @Test
+    public void large_straight_returns_20_given_6_5_4_3_2() {
+        assertEquals(20, yatzy.largeStraight(6, 5, 4, 3, 2));
+    }
+
+    @Test
+    public void large_straight_returns_0_given_2_3_4_5_1() {
+        assertEquals(0, yatzy.largeStraight(2, 3, 4, 5, 1));
+    }
 }
