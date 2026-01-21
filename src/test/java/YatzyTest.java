@@ -163,4 +163,9 @@ public class YatzyTest {
     public void three_of_a_kind_returns_0_given_3_3_4_5_6() {
         assertEquals(0, yatzy.three_of_a_kind(3,3,4,5,6));
     }
+
+    @Test
+    public void three_of_a_kind_returns_9_given_3_3_3_3_1() {
+        assertEquals(9, yatzy.three_of_a_kind(3,3,3,3,1));
+    }
 }
