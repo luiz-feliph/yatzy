@@ -105,4 +105,20 @@ public class YatzyTest {
         int face = 6;
         assertEquals(0, yatzy.sumDiceWithFace(face, 4,1,2,5,3));
     }
+
+    // Pair category
+    @Test
+    public void pair_returns_0_given_1_2_3_4_5() {
+        assertEquals(0, yatzy.pair(1,2,3,4,5));
+    }
+
+    @Test
+    public void pair_returns_8_given_3_3_3_4_4() {
+        assertEquals(8, yatzy.pair(3,3,3,4,4));
+    }
+
+    @Test
+    public void pair_returns_12_given_1_1_6_2_6() {
+        assertEquals(12, yatzy.pair(1,1,6,2,6));
+    }
 }
