@@ -159,4 +159,14 @@ public class Yatzy {
 
         return 0;
     }
+
+    public int fullHouse(int d1, int d2, int d3, int d4, int d5) {
+        Set<Integer> differentFaces = new HashSet<>(Arrays.asList(d1, d2, d3, d4, d5));
+        if (differentFaces.size() == 2) {
+            boolean is_there_three_of_a_kind = three_of_a_kind(d1, d2, d3, d4, d5) != 0;
+            if (is_there_three_of_a_kind) return d1 + d2 + d3 + d4 + d5;
+        }
+
+        return 0;
+    }
 }
