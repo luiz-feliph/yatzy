@@ -25,4 +25,16 @@ public class YatzyTest {
     public void yatzy_returns_0_given_1_1_1_2_1() {
         assertEquals(50, yatzy.yatzy(1,1,1,1,1));
     }
+
+    @Test
+    public void ones_returns_3_given_1_2_1_6_1() {
+        int face = 1;
+        assertEquals(3, yatzy.sumDiceWithFace(face, 1,2,1,6,1));
+    }
+
+    @Test
+    public void ones_returns_0_given_3_3_3_4_5() {
+        int face = 1;
+        assertEquals(0, yatzy.sumDiceWithFace(face, 3,3,3,4,5));
+    }
 }
