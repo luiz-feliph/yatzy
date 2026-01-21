@@ -216,4 +216,20 @@ public class YatzyTest {
     public void large_straight_returns_0_given_2_3_4_5_1() {
         assertEquals(0, yatzy.largeStraight(2, 3, 4, 5, 1));
     }
+
+    // Full house category
+    @Test
+    public void full_house_returns_8_given_1_1_2_2_2() {
+        assertEquals(8, yatzy.fullHouse(1, 1, 2, 2, 2));
+    }
+
+    @Test
+    public void full_house_returns_0_given_2_2_3_3_4() {
+        assertEquals(0, yatzy.fullHouse(2, 2, 3, 3, 4));
+    }
+
+    @Test
+    public void full_house_returns_0_given_4_4_4_4_4() {
+        assertEquals(0, yatzy.fullHouse(4, 4, 4, 4, 4));
+    }
 }
