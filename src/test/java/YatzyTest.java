@@ -184,4 +184,20 @@ public class YatzyTest {
     public void four_of_a_kind_returns_8_given_2_2_2_2_2() {
         assertEquals(8, yatzy.four_of_a_kind(2,2,2,2,2));
     }
+
+    // Small straight category
+    @Test
+    public void small_straight_returns_15_given_1_2_3_4_5() {
+        assertEquals(15, yatzy.smallStraight(1,2,3,4,5));
+    }
+
+    @Test
+    public void small_straight_returns_15_given_5_4_3_2_1() {
+        assertEquals(15, yatzy.smallStraight(5,4,3,2,1));
+    }
+
+    @Test
+    public void small_straight_returns_0_given_2_3_4_5_6() {
+        assertEquals(0, yatzy.smallStraight(2,3,4,5,6));
+    }
 }
