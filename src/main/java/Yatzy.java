@@ -10,11 +10,8 @@ public class Yatzy {
     }
 
     public int yatzy(int d1, int d2, int d3, int d4, int d5) {
-        int[] fiveDiceResults = {d1, d2, d3, d4, d5};
-        for (int i = 1; i < 5; i++) {
-            if (fiveDiceResults[i] != fiveDiceResults[i - 1]) return 0;
-        }
-        return 50;
+        Set<Integer> differentFaces = new HashSet<>(Arrays.asList(d1, d2, d3, d4, d5));
+        return differentFaces.size() == 1? 50 : 0;
     }
 
     public int sumDiceWithFace(int face, int d1, int d2, int d3, int d4, int d5) {
