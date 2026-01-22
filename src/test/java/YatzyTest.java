@@ -151,33 +151,39 @@ public class YatzyTest {
     // Three of a kind category
     @Test
     public void three_of_a_kind_returns_sum_of_three_equal_values() {
-        assertEquals(9, yatzy.three_of_a_kind(3, 3, 3, 4, 5));
+        int requiredCount = 3;
+        assertEquals(9, yatzy.nOfAKind(requiredCount, 3, 3, 3, 4, 5));
     }
 
     @Test
     public void three_of_a_kind_returns_0_when_there_is_no_three_of_a_kind() {
-        assertEquals(0, yatzy.three_of_a_kind(3, 3, 4, 5, 6));
+        int requiredCount = 3;
+        assertEquals(0, yatzy.nOfAKind(requiredCount,3, 3, 4, 5, 6));
     }
 
     @Test
     public void three_of_a_kind_returns_sum_of_three_even_if_there_is_a_four_of_a_kind() {
-        assertEquals(9, yatzy.three_of_a_kind(3, 3, 3, 3, 1));
+        int requiredCount = 3;
+        assertEquals(9, yatzy.nOfAKind(requiredCount,3, 3, 3, 3, 1));
     }
 
     // Four of a kind category
     @Test
     public void four_of_a_kind_returns_sum_of_four_equal_values() {
-        assertEquals(8, yatzy.four_of_a_kind(2, 2, 2, 2, 5));
+        int requiredCount = 4;
+        assertEquals(8, yatzy.nOfAKind(requiredCount,2, 2, 2, 2, 5));
     }
 
     @Test
     public void four_of_a_kind_returns_0_when_there_is_no_four_of_a_kind() {
-        assertEquals(0, yatzy.four_of_a_kind(2, 2, 2, 5, 5));
+        int requiredCount = 4;
+        assertEquals(0, yatzy.nOfAKind(requiredCount,2, 2, 2, 5, 5));
     }
 
     @Test
     public void four_of_a_kind_returns_sum_of_four_when_all_dice_are_equal() {
-        assertEquals(8, yatzy.four_of_a_kind(2, 2, 2, 2, 2));
+        int requiredCount = 4;
+        assertEquals(8, yatzy.nOfAKind(requiredCount,2, 2, 2, 2, 2));
     }
 
     // Small straight category
