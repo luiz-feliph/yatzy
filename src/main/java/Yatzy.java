@@ -76,20 +76,20 @@ public class Yatzy {
         return 0;
     }
 
-    public int smallStraight(int d1, int d2, int d3, int d4, int d5) {
+    private int straightAvoiding(int avoidedNumber, int d1, int d2, int d3, int d4, int d5) {
         Set<Integer> differentFaces = new HashSet<>(Arrays.asList(d1, d2, d3, d4, d5));
-        if (differentFaces.size() == 5 && !differentFaces.contains(6))
+        if (differentFaces.size() == 5 && !differentFaces.contains(avoidedNumber))
             return differentFaces.stream().reduce(0, Integer::sum);
 
         return 0;
     }
 
-    public int largeStraight(int d1, int d2, int d3, int d4, int d5) {
-        Set<Integer> differentFaces = new HashSet<>(Arrays.asList(d1, d2, d3, d4, d5));
-        if (differentFaces.size() == 5 && !differentFaces.contains(1))
-            return differentFaces.stream().reduce(0, Integer::sum);
+    public int smallStraight(int d1, int d2, int d3, int d4, int d5) {
+        return straightAvoiding(6, d1, d2, d3, d4, d5);
+    }
 
-        return 0;
+    public int largeStraight(int d1, int d2, int d3, int d4, int d5) {
+        return straightAvoiding(1, d1, d2, d3, d4, d5);
     }
 
     public int fullHouse(int d1, int d2, int d3, int d4, int d5) {
